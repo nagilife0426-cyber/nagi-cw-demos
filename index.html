@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>なぎ｜業務自動化・AI活用 デモ集</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0f1422;--bg2:#161d2e;--card:#1b2336;--border:#2a3650;
+    --text:#eef2f9;--muted:#9aa7bf;--muted2:#6b7a96;
+    --accent:#5b8def;--accent2:#7c5cff;--green:#34d399;--pink:#f472b6;--amber:#fbbf24;
+    --radius:16px;
+  }
+  body{background:radial-gradient(1200px 600px at 70% -10%,rgba(124,92,255,.18),transparent),var(--bg);
+    color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Hiragino Sans',sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  header{padding:64px 0 36px;text-align:center}
+  .eyebrow{display:inline-block;font-size:12px;letter-spacing:2px;color:var(--accent);
+    border:1px solid var(--border);background:var(--bg2);padding:6px 14px;border-radius:99px;margin-bottom:20px}
+  h1{font-size:38px;font-weight:800;letter-spacing:-.5px;line-height:1.25;margin-bottom:14px}
+  h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .lead{color:var(--muted);font-size:16px;max-width:620px;margin:0 auto}
+  .stack{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+  .chip{font-size:12px;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:5px 12px;border-radius:8px}
+  .note{margin-top:26px;font-size:12.5px;color:var(--muted2);background:var(--bg2);border:1px solid var(--border);
+    border-radius:12px;padding:12px 16px;display:inline-block}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:30px 0 50px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}h1{font-size:30px}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
+    display:flex;flex-direction:column;transition:transform .15s,border-color .15s,box-shadow .15s;text-decoration:none;color:inherit}
+  .card:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 14px 40px rgba(0,0,0,.35)}
+  .ic{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;font-size:24px;margin-bottom:16px}
+  .c1 .ic{background:linear-gradient(135deg,#f472b6,#fb7185)}
+  .c2 .ic{background:linear-gradient(135deg,#7c5cff,#5b8def)}
+  .c3 .ic{background:linear-gradient(135deg,#3b82f6,#06b6d4)}
+  .c4 .ic{background:linear-gradient(135deg,#10b981,#34d399)}
+  .card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+  .card .sub{font-size:12.5px;color:var(--accent);margin-bottom:12px;font-weight:600}
+  .card p{font-size:14px;color:var(--muted);flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+  .tag{font-size:11px;color:var(--muted);background:var(--bg);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
+  .btn{margin-top:6px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:#fff;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));padding:11px 18px;border-radius:10px;justify-content:center}
+  footer{padding:30px 0 60px;text-align:center;color:var(--muted2);font-size:12.5px;border-top:1px solid var(--border)}
+  .disc{margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">PORTFOLIO ・ DEMO</span>
+    <h1>業務を、<span class="grad">仕組みで自動化</span>します。</h1>
+    <p class="lead">GAS・Python・Claude（AI）を使った業務自動化を中心に活動している「なぎ」です。
+      ご依頼前にイメージを掴んでいただけるよう、実際に動くデモをご用意しました。</p>
+    <div class="stack">
+      <span class="chip">Google Apps Script</span>
+      <span class="chip">Python</span>
+      <span class="chip">Claude API</span>
+      <span class="chip">Instagram / Threads API</span>
+      <span class="chip">Excel VBA</span>
+      <span class="chip">スクレイピング</span>
+    </div>
+    <div class="note">⚠️ 各デモは<strong>ダミーデータ</strong>で動作します。実際のAPI送信・外部投稿は行いません。</div>
+  </header>
+
+  <div class="grid">
+    <a class="card c1" href="a1-sns-autopost/demo.html">
+      <div class="ic">📲</div>
+      <h3>SNS自動投稿システム</h3>
+      <div class="sub">Instagram 2 ＋ Threads 2 アカウント対応</div>
+      <p>150パターンの投稿をスプレッドシートで管理し、30分間隔（ランダム）で自動投稿。全件配信後は先頭から自動ループ。GASのみで完結し月額コストはゼロ。</p>
+      <div class="tags"><span class="tag">GAS</span><span class="tag">Graph API</span><span class="tag">Sheets管理</span><span class="tag">自動ループ</span></div>
+      <span class="btn">デモを見る →</span>
+    </a>
+
+    <a class="card c2" href="a2-threads-claude/demo.html">
+      <div class="ic">✨</div>
+      <h3>AI投稿文 生成・自動投稿</h3>
+      <div class="sub">Claude × Threads マーケティング自動化</div>
+      <p>Claude（AI）がテーマに沿った投稿文を生成。文字数・NGワード・重複を自動チェックし、人の承認を挟んでから投稿する安全設計。運用コストは月数円。</p>
+      <div class="tags"><span class="tag">Claude API</span><span class="tag">承認フロー</span><span class="tag">品質チェック</span><span class="tag">スケジュール</span></div>
+      <span class="btn">デモを見る →</span>
+    </a>
+
+    <a class="card c3" href="a3-amazon-aggregator/demo.html">
+      <div class="ic">📊</div>
+      <h3>Amazonセラー 集計ダッシュボード</h3>
+      <div class="sub">売上・粗利・ACoS・在庫をワンクリック集計</div>
+      <p>Amazonの各種レポート（CSV/Excel）を取り込み、商品別・期間別に自動集計。粗利・ACoS・在庫切れアラートを可視化。GAS版／Excel VBA版の両対応。</p>
+      <div class="tags"><span class="tag">GAS</span><span class="tag">Excel VBA</span><span class="tag">BIダッシュボード</span><span class="tag">粗利/ACoS</span></div>
+      <span class="btn">デモを見る →</span>
+    </a>
+
+    <a class="card c4" href="a4-company-scraper/demo.html">
+      <div class="ic">🔎</div>
+      <h3>法人データ収集ツール</h3>
+      <div class="sub">企業名 → 郵便番号・住所・代表者名を抽出</div>
+      <p>企業名リストから公式HPを特定し、住所・代表者名を自動抽出。完全取得／要確認を信頼度で仕分け。robots.txt遵守・アクセス間隔配慮のコンプライアンス設計。</p>
+      <div class="tags"><span class="tag">Python</span><span class="tag">スクレイピング</span><span class="tag">robots.txt遵守</span><span class="tag">CSV出力</span></div>
+      <span class="btn">デモを見る →</span>
+    </a>
+  </div>
+
+  <footer>
+    制作: なぎ（Tomoya &amp; Co.）／ お問い合わせはクラウドワークスのメッセージよりお願いいたします。
+    <div class="disc">本ページは案件提案用のデモ集です。掲載データはすべてサンプルで、実在の個人・企業の情報は含まれません。</div>
+  </footer>
+</div>
+</body>
+</html>
